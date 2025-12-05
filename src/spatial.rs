@@ -78,7 +78,7 @@ pub fn deg2hms(deg: f64) -> String {
 
     let h = deg * 12.0 / 180.0;
     let hours = h.floor() as i32;
-    let m = (h - hours as f64) * 60.0;
+    let m = h * 60.0 - hours as f64 * 60.0;
     let minutes = m.floor() as i32;
     let seconds = (m - minutes as f64) * 60.0;
     let hms = format!("{:02.0}:{:02.0}:{:07.4}", hours, minutes, seconds);
